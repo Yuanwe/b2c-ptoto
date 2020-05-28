@@ -1,12 +1,12 @@
 syntax = "proto3";
 package staff;
 
-import "google/protobuf/any.proto";
-option go_package = "b2c-proto/proto/staff";
+import "common/common.proto";
+option go_package = "b2c-staff/proto/staff";
 
 service Staff {
-  rpc Login(Request) returns (Response) {}
-  rpc Register(User) returns (Response) {}
+  rpc Login(Request) returns (common.Response) {}
+  rpc Register(User) returns (common.Response) {}
 }
 
 
@@ -26,8 +26,3 @@ message Request {
 }
 
 
-message Response {
-  string msg = 1;
-  google.protobuf.Any data = 3;
-  string code = 2;
-}
